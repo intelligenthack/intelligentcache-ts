@@ -1,5 +1,7 @@
 import {ICache} from "./ICache";
 
+const MAX_EPOCH = 8_640_000_000_000_000;
+
 interface IDictionary<T> {[Key: string]: T;}
 type MemoryCacheValue = {expiration: Date, value: any}
 function isNullOrEmpty(s: string): boolean {
@@ -36,7 +38,7 @@ export class MemoryCache implements ICache {
     const value = calculateValue();
     if (value == undefined) return null; // Not all caches support null values. Also, caching a null is dodgy in itself.
 
-    const expiration = duration == Infinity ? new Date(Infinity) : Date.now() + duration * 1000;
+    const expiration = duration == Infinity ? new Date(MAX_EPOCH) : Date.now() + duration * 1000;
     this.#innerCache[k] = {expiration, value};
     return value;
   }
@@ -58,7 +60,7 @@ export class MemoryCache implements ICache {
     const value = await calculateValue();
     if (value == undefined) return null; // Not all caches support null values. Also, caching a null is dodgy in itself.
 
-    const expiration = duration == Infinity ? new Date(Infinity) : Date.now() + duration * 1000;
+    const expiration = duration == Infinity ? new Date(MAX_EPOCH) : Date.now() + duration * 1000;
     this.#innerCache[k] = {expiration, value};
     return value;
   }
