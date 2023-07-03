@@ -3,7 +3,7 @@ import {ICache} from "./ICache";
 interface IDictionary<T> {[Key: string]: T;}
 type MemoryCacheValue = {expiration: Date, value: any}
 function isNullOrEmpty(s: string): boolean {
-  return !!s && s.length > 0;
+  return !s || s.length === 0;
 }
 
 /**

@@ -8,5 +8,6 @@
     "strict": true,
     "rootDir": "src/",
     "outDir": "dist/",
+    "types": ["mocha"],
   }
 }
