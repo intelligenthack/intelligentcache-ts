@@ -1,0 +1,31 @@
+{
+  "name": "@intelligenthack-org/intelligentcache",
+  "version": "0.1.1",
+  "description": "A distributed cache backed by Redis",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "prepack": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intelligenthack/intelligentcache-ts.git"
+  },
+  "keywords": [
+    "cache",
+    "distributed",
+    "cache",
+    "redis"
+  ],
+  "author": "Intelligent Hack (marco.cecconi@intelligenthack.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/intelligenthack/intelligentcache-ts/issues"
+  },
+  "homepage": "https://github.com/intelligenthack/intelligentcache-ts#readme",
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
