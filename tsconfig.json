@@ -9,5 +9,9 @@
     "rootDir": "src/",
     "outDir": "dist/",
     "types": ["mocha"],
-  }
+  },
+  "exclude": [
+    "test",
+    "dist"
+  ]
 }
