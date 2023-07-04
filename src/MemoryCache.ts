@@ -1,13 +1,10 @@
 import {ICache} from "./ICache";
+import {isNullOrEmpty} from "./utils";
 
 const MAX_EPOCH = 8_640_000_000_000_000;
 
 interface IDictionary<T> {[Key: string]: T;}
 type MemoryCacheValue = {expiration: Date, value: any}
-function isNullOrEmpty(s: string): boolean {
-  return !s || s.length === 0;
-}
-
 /**
  * An implementation of <see cref="ICache" /> that stores values in a hash/>.
  */
