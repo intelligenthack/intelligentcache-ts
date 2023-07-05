@@ -5,6 +5,7 @@ export function isNullOrEmpty(s: string): boolean {
 }
 
 export function halt<T>(promise: Promise<T>): T | undefined {
+  if (!promise) throw new Error("Argument exception (promise)");
   let result: T | undefined = undefined;
   let done = false;
   promise.then(res=>{
